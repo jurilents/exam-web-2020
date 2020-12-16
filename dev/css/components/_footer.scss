@@ -1,0 +1,13 @@
+.author-link {
+	height: 30px;
+	transition: opacity 0.2s ease;
+
+	&:hover {
+		opacity: 0.6;
+		transition: opacity 0.1s ease;
+	}
+
+	img {
+		height: 100%;
+	}
+}

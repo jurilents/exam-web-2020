@@ -1,0 +1,34 @@
+// Material Font Icons
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+// Materialize Lib
+@import "libs/materialize/main";
+
+// Libruaries
+@import "libs/media";
+
+// Components
+@import "components/cards";
+@import "components/container";
+@import "components/footer";
+@import "components/header";
+
+.primary {
+	@extend .indigo;
+}
+
+.primary-darken {
+	@extend .indigo, .indigo.darken-2;
+}
+
+// Sticky Footer
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+}

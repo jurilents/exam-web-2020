@@ -1,0 +1,138 @@
+// =================== Header Logo ===================
+// ===================================================
+
+#logo {
+	display: inline-block;
+	height: 100%;
+
+	img {
+		height: 100%;
+		padding: 8px 0;
+	}
+}
+
+// ================= Header Navbar ==================
+// ===================================================
+
+nav {
+	height: 80px !important;
+}
+
+.header-navbar {
+	padding-top: 15px;
+}
+
+// ================= Sedenav Navbar ==================
+// ===================================================
+
+.sidenav {
+	padding: 80px 10px 0 10px;
+	width: 260px;
+	z-index: 1000;
+
+	ul li > a {
+		color: white;
+	}
+
+	.logo {
+		display: inline-block;
+		padding: 0;
+		position: fixed;
+		bottom: 80px;
+		right: 100px;
+		width: 75px;
+
+		img {
+			width: 90%;
+			padding: 8px 0;
+		}
+	}
+}
+
+.sidenav-overlay {
+	z-index: 600;
+}
+
+// ================== Burger Button ==================
+// ===================================================
+
+$burger-size: 50px;
+$lines-width: 35px;
+$lines-height: 4px;
+$lines-distance: 5px;
+
+.burger-wrapper {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 0;
+	height: 0;
+}
+
+.burger-button {
+	width: $burger-size;
+	height: $burger-size;
+	border-radius: $burger-size / 5;
+	transition: all 0.5s ease;
+
+	position: fixed;
+	top: 15px;
+	left: 100px;
+	z-index: 10000;
+
+	span {
+		display: block;
+		position: relative;
+		width: $lines-width;
+		height: $lines-height;
+		margin: 0 auto;
+		transform: translateY($burger-size * 0.46);
+
+		&,
+		&:before,
+		&:after {
+			background-color: white;
+			border-radius: $burger-size / 15;
+			transition: all 0.33s ease-in-out;
+
+			transform-origin: 50% 50%;
+		}
+
+		&:before,
+		&:after {
+			content: "";
+			width: $lines-width;
+			height: $lines-height;
+			position: absolute;
+			left: 0;
+		}
+
+		$lines-distance: $burger-size * 0.24;
+
+		&:before {
+			transform: translateY($lines-distance);
+		}
+
+		&:after {
+			transform: translateY(-$lines-distance);
+		}
+	}
+
+	&__selected {
+		filter: brightness(125%);
+
+		span {
+			background-color: transparent;
+			transform: rotate(180deg) translateY($burger-size * -0.46);
+
+			&:before {
+				transform: rotate(45deg);
+			}
+
+			&:after {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}
